@@ -1,22 +1,51 @@
-.navbar-f {
-  display: inline-flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  height: 100%;
-  background-color: blue;
-  /* width: 20%; */
-}
-
 html,
 body {
   height: 100%;
+  margin: 0px;
+  font-family: "Outfit", sans-serif;
 }
 
 .nav-icons {
-  margin: 2rem 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2rem;
+  width: 2rem;
 }
 
 .dashboard {
-  width: auto;
+  background-color: #152031;
+  margin: 0px;
+  color: white;
+}
+
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 5% 80% 5%;
+  margin: 0px;
+}
+
+h1 {
+  padding: 2rem;
+}
+
+h3 {
+  padding: 2rem;
+}
+
+.grid-column {
+  grid-column: 1 / 1;
   display: inline-flex;
+  flex-direction: column;
+  height: 20%;
+}
+.another {
+  grid-column: 2 / 2;
+  height: auto;
+}
+
+.third {
+  grid-column: 3 / 3;
 }
