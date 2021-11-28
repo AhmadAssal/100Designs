@@ -11,6 +11,98 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
       rel="stylesheet"
     />
+
+    <script>
+      window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          backgroundColor: "#d3d3d3",
+          title: {
+            text: "Daily Usage",
+            fontFamily: "sans-serif",
+            verticalAlign: "top",
+            horizontalAlign: "left",
+            margin: 20,
+            fontWeight: "bold",
+          },
+          axisX: {
+            valueFormatString: "DD MMM,YY",
+          },
+          axisY: {
+            title: "Time in hours",
+            suffix: " hr",
+          },
+          legend: {
+            cursor: "pointer",
+            fontSize: 16,
+            itemclick: toggleDataSeries,
+          },
+          toolTip: {
+            shared: true,
+          },
+          data: [
+            {
+              name: "Myrtle Beach",
+              type: "spline",
+              yValueFormatString: "#0.## °C",
+              // showInLegend: true,
+              dataPoints: [
+                { label: "Sunday", y: 31 },
+                { label: "Monday", y: 31 },
+                { label: "Tuesday", y: 29 },
+                { label: "Wednesday", y: 29 },
+                { label: "Thursday", y: 31 },
+                { label: "Friday", y: 30 },
+                { label: "Saturday", y: 29 },
+              ],
+            },
+            {
+              name: "Martha Vineyard",
+              type: "spline",
+              yValueFormatString: "#0.## °C",
+              // showInLegend: true,
+              dataPoints: [
+                { label: "Sunday", y: 20 },
+                { label: "Monday", y: 20 },
+                { label: "Tuesday", y: 25 },
+                { label: "Wednesday", y: 25 },
+                { label: "Thursday", y: 25 },
+                { label: "Friday", y: 25 },
+                { label: "Saturday", y: 25 },
+              ],
+            },
+            {
+              name: "Nantucket",
+              type: "spline",
+              yValueFormatString: "#0.## °C",
+              // showInLegend: true,
+              dataPoints: [
+                { label: "Sunday", y: 22 },
+                { label: "Monday", y: 19 },
+                { label: "Tuesday", y: 23 },
+                { label: "Wednesday", y: 24 },
+                { label: "Thursday", y: 24 },
+                { label: "Friday", y: 23 },
+                { label: "Saturday", y: 23 },
+              ],
+            },
+          ],
+        });
+        chart.render();
+
+        function toggleDataSeries(e) {
+          if (
+            typeof e.dataSeries.visible === "undefined" ||
+            e.dataSeries.visible
+          ) {
+            e.dataSeries.visible = false;
+          } else {
+            e.dataSeries.visible = true;
+          }
+          chart.render();
+        }
+      };
+    </script>
     <title>Gadget-Dashboard</title>
   </head>
   <body>
@@ -30,23 +122,59 @@
         </div>
         <div class="stats-container">
           <div class="stats-card">
-            <h3>Daily Usage</h3>
-            <h2>6h 41m</h2>
+            <img
+              src="/assets/percentages/20.png"
+              alt="percentage"
+              class="percent-cards"
+            />
+            <div class="usage-info">
+              <p>Daily Usage</p>
+              <p>6h 41m</p>
+            </div>
           </div>
           <div class="stats-card">
-            <h3>Average Usage</h3>
-            <h2>6h 41m</h2>
+            <img
+              src="/assets/percentages/35.png"
+              alt="percentage"
+              class="percent-cards"
+            />
+            <div class="usage-info">
+              <p>Average Usage</p>
+              <p>6h 41m</p>
+            </div>
           </div>
-          <div class="stats-card margin-right">
-            <h3>Total Usage</h3>
-            <h2>6h 41m</h2>
+          <div class="stats-card">
+            <img
+              src="/assets/percentages/60.png"
+              alt="percentage"
+              class="percent-cards"
+            />
+            <div class="usage-info">
+              <p>Total Usage</p>
+              <p>6h 41m</p>
+            </div>
           </div>
         </div>
+        <div
+          id="chartContainer"
+          style="
+            height: 300px;
+            width: 80%;
+            margin-left: 2rem;
+            margin-right: 2rem;
+          "
+        ></div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
       </div>
 
       <div class="profile p-2">
         <h1>profile</h1>
       </div>
     </div>
+    <footer>
+      <a href="https://www.vecteezy.com/free-vector/web"
+        >Web Vectors by Vecteezy</a
+      >
+    </footer>
   </body>
 </html>
