@@ -94,3 +94,8 @@ body {
 .chart-margin {
   padding: 2rem;
 }
+
+.bold {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
