@@ -103,5 +103,41 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background: red;
+}
+
+.product-image {
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  justify-self: center;
+  align-items: center; /* Centering x-axis */
+  border-radius: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering y-axis */
+  align-items: center; /* Centering x-axis */
+  color: black;
+  margin: 1rem;
+}
+
+.devices-title {
+  color: black;
+}
+
+.product-title {
+  margin: auto;
+  text-align: center;
+}
+
+.m-2 {
+  margin-left: 2rem;
+}
+
+.logo {
+  width: 5rem;
+  height: 5rem;
+  background-color: grey;
 }
